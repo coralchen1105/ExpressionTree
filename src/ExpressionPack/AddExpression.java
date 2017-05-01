@@ -3,6 +3,7 @@ package ExpressionPack;
 public class AddExpression extends Expression {
 	
 	Expression left, right;
+	String variableExpression;
 	
 	public AddExpression(Expression l, Expression r){
 		left = l;
@@ -15,12 +16,20 @@ public class AddExpression extends Expression {
 	}
 	@Override
 	public int evaluate(Subs subs) {
-		if(left instanceof VarExpression || right instanceof VarExpression){
-			System.out.println(this.show());
-			return 0;
+		
+		if(right instanceof VarExpression){
+			variableExpression = left.evaluate(subs) +  "+ X";
+			System.out.println(variableExpression);
+			return left.evaluate(subs);
+		}else if(left instanceof VarExpression){
+			variableExpression = right.evaluate(subs) + "X + ";
+			System.out.println(variableExpression);
+			return right.evaluate(subs);
+		}else{
+			return left.evaluate(subs) + right.evaluate(subs);
 		}
 		
-		return left.evaluate(subs) + right.evaluate(subs);
+		
 	}
 	@Override
 	public int size() {
