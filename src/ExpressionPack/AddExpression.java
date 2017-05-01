@@ -10,13 +10,17 @@ public class AddExpression extends Expression {
 	} 
 	@Override
 	public String show() {
-		// TODO Auto-generated method stub
+		
 		return "(" + left.show() + " + " + right.show() + ")" ; 
 	}
 	@Override
-	public int evaluate() {
+	public int evaluate(Subs subs) {
+		if(left instanceof VarExpression || right instanceof VarExpression){
+			System.out.println(this.show());
+			return 0;
+		}
 		
-		return left.evaluate() + right.evaluate();
+		return left.evaluate(subs) + right.evaluate(subs);
 	}
 	@Override
 	public int size() {

@@ -14,9 +14,9 @@ public class MultExpression extends Expression {
 		return "(" + left.show() + " * " + right.show() + ")" ; 
 	}
 	@Override
-	public int evaluate() {
+	public int evaluate(Subs subs) {
 		
-		return left.evaluate() * right.evaluate();
+		return left.evaluate(subs) * right.evaluate(subs);
 	}
 	@Override
 	public int size() {

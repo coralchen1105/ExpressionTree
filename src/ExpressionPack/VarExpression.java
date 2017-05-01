@@ -15,9 +15,9 @@ public class VarExpression extends Expression {
 	}
 
 	@Override
-	public int evaluate() {
+	public int evaluate(Subs subs) {
 		// TODO Auto-generated method stub
-		return 0;
+		return subs.get(name);
 	}
 
 	@Override

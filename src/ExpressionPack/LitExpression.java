@@ -15,7 +15,7 @@ public class LitExpression extends Expression {
 	}
 
 	@Override
-	public int evaluate() {
+	public int evaluate(Subs subs) {
 		// TODO Auto-generated method stub
 		return value;
 	}

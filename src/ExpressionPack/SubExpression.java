@@ -14,10 +14,10 @@ public class SubExpression extends Expression {
 		return "(" + left.show() + " - " + right.show() + ")" ; 
 	}
 	@Override
-	public int evaluate() {
+	public int evaluate(Subs subs) {
 		// TODO Auto-generated method stub
 		
-		return left.evaluate() - right.evaluate();
+		return left.evaluate(subs) - right.evaluate(subs);
 		
 	}
 	@Override

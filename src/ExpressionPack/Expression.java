@@ -5,7 +5,8 @@ public abstract class Expression {
 	
 	
 	abstract public  String show();
-    abstract public int evaluate();
+    abstract public int evaluate(Subs subs);
+    
 	abstract public int size();
 	abstract public int height();
 	abstract public int countOperator();
@@ -33,6 +34,9 @@ public abstract class Expression {
     	return new DivExpression(left,right);
     }
     
+    public static VarExpression varExp(String name){
+    	return new VarExpression(name);
+    }
     
     
 }
