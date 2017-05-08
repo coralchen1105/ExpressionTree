@@ -38,6 +38,12 @@ public class VarExpression extends Expression {
 		return 1; 
 	}
 
+	@Override
+	public Expression simplify(Subs sub) {
+		// TODO Auto-generated method stub
+		return this;
+	}
+
 	
 
 }

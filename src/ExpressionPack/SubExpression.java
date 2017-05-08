@@ -35,6 +35,17 @@ public class SubExpression extends Expression {
 		// TODO Auto-generated method stub
 		return 1 + left.countOperator() + right.countOperator(); 
 	}
+	@Override
+	public Expression simplify(Subs sub) {
+		Expression leftSimplify = left.simplify(sub);
+		Expression rightSimplify = right.simplify(sub);
+		
+		if(leftSimplify instanceof LitExpression && rightSimplify instanceof LitExpression){
+			LitExpression litExp = new LitExpression(leftSimplify.evaluate(sub) - rightSimplify.evaluate(sub));
+			return litExp;
+		}
+		return this;
+	}
 	
 
 	

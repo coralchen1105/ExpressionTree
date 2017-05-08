@@ -10,6 +10,7 @@ public abstract class Expression {
 	abstract public int size();
 	abstract public int height();
 	abstract public int countOperator();
+	abstract public Expression simplify(Subs sub);
 	
 	
     public static Expression lit(int value){

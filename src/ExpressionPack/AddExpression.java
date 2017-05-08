@@ -16,20 +16,7 @@ public class AddExpression extends Expression {
 	}
 	@Override
 	public int evaluate(Subs subs) {
-		
-		if(right instanceof VarExpression){
-			variableExpression = left.evaluate(subs) +  "+ X";
-			System.out.println(variableExpression);
-			return left.evaluate(subs);
-		}else if(left instanceof VarExpression){
-			variableExpression = right.evaluate(subs) + "X + ";
-			System.out.println(variableExpression);
-			return right.evaluate(subs);
-		}else{
-			return left.evaluate(subs) + right.evaluate(subs);
-		}
-		
-		
+		return left.evaluate(subs) + right.evaluate(subs);
 	}
 	@Override
 	public int size() {
@@ -45,6 +32,17 @@ public class AddExpression extends Expression {
 	public int countOperator() {
 		// TODO Auto-generated method stub
 		return 1 + left.countOperator() + right.countOperator(); 
+	}
+	@Override
+	public Expression simplify(Subs sub) {
+		Expression leftSimplify = left.simplify(sub);
+		Expression rightSimplify = right.simplify(sub);
+		
+		if(leftSimplify instanceof LitExpression && rightSimplify instanceof LitExpression){
+			LitExpression litExp = new LitExpression(leftSimplify.evaluate(sub) + rightSimplify.evaluate(sub));
+			return litExp;
+		}
+		return this;
 	}
 	
 	

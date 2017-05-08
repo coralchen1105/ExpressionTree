@@ -38,6 +38,12 @@ public class LitExpression extends Expression {
 		return 0;
 	}
 
+	@Override
+	public Expression simplify(Subs sub) {
+		// TODO Auto-generated method stub
+		return this;
+	}
+
 
 
 	
