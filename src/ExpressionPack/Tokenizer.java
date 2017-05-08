@@ -1,7 +1,6 @@
 package ExpressionPack;
 
 import java.text.ParseException;
-
 public abstract class Tokenizer {
 	
 	abstract boolean hasNext();

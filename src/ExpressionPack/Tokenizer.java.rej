@@ -1,0 +1,9 @@
+diff a/src/ExpressionPack/Tokenizer.java b/src/ExpressionPack/Tokenizer.java	(rejected hunks)
+@@ -0,6 +0,7 @@
+ package ExpressionPack;
+ 
+ import java.text.ParseException;
++
+ public abstract class Tokenizer {
+ 	
+ 	abstract boolean hasNext();
