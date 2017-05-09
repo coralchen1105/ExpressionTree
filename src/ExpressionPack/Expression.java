@@ -12,9 +12,9 @@ public abstract class Expression {
 	abstract public int countOperator();
 	
 	/*
-	 * <expression> ::= <term> | <term> + <expression>
-	 * <term> ::= <factor> | <factor> * <term>
-	 * <factor> ::= <lit> |<var> | (<expression>)
+	 * <expression> ::= <term> | <term> + <expression> | <term> - <expression>
+	 * <term> ::= <factor> | <factor> * <term> | <factor> / <term>
+	 * <factor> ::= <lit> | <var> | (<expression>)
 	
 	*/
 	public static Expression parseExp(Tokenizer tz) throws ParseException{
