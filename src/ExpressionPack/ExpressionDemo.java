@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class ExpressionDemo {
 
 	static String exp1 = "2 * 5 + 3";
-	static String exp2 = "(2 * 44) + 2";
+	static String exp2 = "100 - 50 / 2";
 	
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
